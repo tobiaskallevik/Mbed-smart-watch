@@ -1,0 +1,28 @@
+{
+    "macros": [
+        "MBED_HEAP_STATS_ENABLED=1",
+        "MBED_STACK_STATS_ENABLED=1",
+        "MBED_MEM_TRACING_ENABLED=1"
+    ],
+    "target_overrides": {
+        "*": {
+            "nsapi.default-wifi-security": "WPA_WPA2", 
+            "nsapi.default-wifi-ssid": "\"MAIN\"", 
+            "nsapi.default-wifi-password": "\"Zanto123\"", 
+            "rtos.main-thread-stack-size": 8192,
+            "platform.stdio-minimal-console-only": false,
+            "target.printf_lib": "std",
+            "platform.stdio-baud-rate": 115200,
+            "platform.minimal-printf-enable-floating-point": true,
+            "platform.minimal-printf-set-floating-point-max-decimals": 6,
+            "platform.minimal-printf-enable-64-bit": false
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.components_add": ["ism43362"],
+            "ism43362.provide-default": true,
+            "ism43362.wifi-debug": false,
+            "target.network-default-interface-type": "WIFI"
+        }
+    }
+}
+ 
